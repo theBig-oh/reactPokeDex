@@ -4,10 +4,33 @@
   border: 5px solid black;
   height: 100%;
 
-  .pokemon-container {
-    border: 5px solid red;
+  .loaded-content {
     height: 100%;
-    margin: 0 5%;
-  }
 
+
+    .pokemon-container {
+      border: 5px solid red;
+      height: 100%;
+      margin: 0 5%;
+      display: flex;
+
+      .pokemon-image-nav-container {
+        border-radius: 10px;
+        width: 25%;
+        height: 100%;
+        background: #9b9c82;
+        .pokemon-image-container {
+          height: 43.33%;
+          display: flex;
+          justify-content: center;
+          .pokemon-image {
+            height: 100%;
+            width: 56%;
+          }
+        }
+      }
+
+    }
+
+  }
 }

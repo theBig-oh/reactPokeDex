@@ -40,6 +40,13 @@ export default class PokeFacts extends Component {
   }
   render() {
 
+    const mainPkmnImage = {
+          background:'url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/'+this.props.propped.match.params.pkmnId+'.png)no-repeat',
+          backgroundSize:'100% 100%',
+          backgroundPosition:'center',
+        };
+
+    const pokemonInfo = [this.state.pokemonDex, this.state.pokemonStats];
     const loadingScreen = <div className='loading-screen'> 
                               <div className='loading-text'>
                                 Loading
@@ -55,13 +62,19 @@ export default class PokeFacts extends Component {
                               <div className='pokemon-container'> 
                                 <div className='pokemon-image-nav-container'>
                                   <div className='pokemon-image-container'>
+                                    <div className={`pokemon-image `} style={mainPkmnImage}>
 
+                                    </div>
                                   </div>
 
                                   <div className='pokemon-name-container'>
-                         
+                                    {pokemonInfo[0].name}
                                   </div>
 
+                                  <div className='pokemon-content-nav'>
+
+
+                                  </div>
                                 </div>
 
                                 <div className='pokemon-content-container'>
