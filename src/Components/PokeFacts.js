@@ -45,7 +45,15 @@ export default class PokeFacts extends Component {
     return (
         <div className='poke-facts'> 
           <div className='pokemon-container'> 
+            <div className='pokemon-image-nav-container'>
 
+
+            </div>
+
+            <div className='pokemon-content-container'>
+
+
+            </div>
 
           </div>
 
