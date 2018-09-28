@@ -1,0 +1,38 @@
+@import '../../settings.scss';
+
+.bodyContain {
+  border: 1px solid black;  
+  display: flex;
+  flex-direction: column;
+  height: 100vh; 
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAHElEQVQYlWNgwATGUIxTghAm3kTqKxxAN1LXagDZFgjFdHIgnwAAAABJRU5ErkJggg==)repeat, #007F15;
+  
+  .content-wrapper {
+    position: absolute;
+    height: 100%;
+    z-index: 1;
+    width: 100%;
+    .top-layer {
+      
+      height: 25%;
+      background: url(/assets/assets/images/pokdex-frames_top.png)no-repeat;
+      background-size: 100% 100%;
+    }
+    .body-content {
+      
+      height: 50%;
+      
+    }
+    .bottom-layer {
+      
+      height: 27%;
+      background: url(/assets/assets/images/pokdex-frames_bottom.png)no-repeat;
+      background-size: 100% 100%;
+    }
+
+  }
+  canvas {
+    position: absolute;
+    z-index:0;
+  }
+}

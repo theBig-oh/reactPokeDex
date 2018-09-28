@@ -1,0 +1,13 @@
+@import '../../settings.scss';
+
+.poke-facts {
+  border: 5px solid black;
+  height: 100%;
+
+  .pokemon-container {
+    border: 5px solid red;
+    height: 100%;
+    margin: 0 5%;
+  }
+
+}

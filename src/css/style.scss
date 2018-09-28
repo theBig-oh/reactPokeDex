@@ -1,0 +1,11 @@
+@import 'settings.scss';
+@import './Components/index.scss';
+
+body {
+	background: white;
+  overflow: hidden;
+  
+  p {
+    margin: 0 0; 
+  }	
+}
