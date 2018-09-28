@@ -7,8 +7,15 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
 
 module.exports = {
   output: {
-    
-    filename: 'main.js'
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
+    filename: 'main_bundle.js'
+  },
+  resolve: {
+    alias: {
+      js$: path.resolve(__dirname, './main.js'),
+      html$: path.resolve(__dirname,'./src/index.html'), 
+    }
   },
   module: {
     rules: [
@@ -46,6 +53,9 @@ module.exports = {
         loader:"style-loader!css-loader!sass-loader"
       },
     ]
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   plugins: [htmlWebpackPlugin]
 };
