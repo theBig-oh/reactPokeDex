@@ -7,8 +7,8 @@ export default class PokeFacts extends Component {
   constructor() {
     super();
     this.state = {
-      pokemonStats: null,
-      pokemonDex: null,
+      pokemonStats: {},
+      pokemonDex: {},
       currentInfo: 0,
       hasLoaded: false,
     }
@@ -34,36 +34,62 @@ export default class PokeFacts extends Component {
     })
 
   }
-  componentWillMount() {
+
+  componentDidMount() {
     this.setPokemonFacts();
   }
   render() {
 
-    console.log(this.state);
+    const loadingScreen = <div className='loading-screen'> 
+                              <div className='loading-text'>
+                                Loading
+                              </div>
+                              <div className='loading-dots'>
+                              ...
+                              </div>
+
+                          </div>;
 
 
+    const loadedContent =  <div className='loaded-content'>
+                              <div className='pokemon-container'> 
+                                <div className='pokemon-image-nav-container'>
+                                  <div className='pokemon-image-container'>
+
+                                  </div>
+
+                                  <div className='pokemon-name-container'>
+                         
+                                  </div>
+
+                                </div>
+
+                                <div className='pokemon-content-container'>
+
+
+                                </div>
+
+                              </div>
+
+                              <div className='linkContainer'>
+                                <Link to='/' className='go-back-link' >
+
+                                  {`< Go back`}
+                                </Link>
+
+                              </div>
+                            </div>; 
+
+
+    const hasLoaded = () => {
+      let loadedState = this.state.hasLoaded ? loadedContent : loadingScreen;
+      return loadedState
+    }
+
+    console.log(hasLoaded());
     return (
         <div className='poke-facts'> 
-          <div className='pokemon-container'> 
-            <div className='pokemon-image-nav-container'>
-
-
-            </div>
-
-            <div className='pokemon-content-container'>
-
-
-            </div>
-
-          </div>
-
-          <div className='linkContainer'>
-            <Link to='/' className='go-back-link' >
-
-              {`< Go back`}
-            </Link>
-
-          </div> 
+            {hasLoaded()}
         </div>
       )
   }
