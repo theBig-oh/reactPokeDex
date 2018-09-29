@@ -9,7 +9,6 @@ export default class PokemonPhysical extends Component {
 
   render() {
     const pkColor = this.props.pkColors;
-    console.log(pkColor);
     return (
         <div className={`pokemon-physical ${pkColor}`}> 
           <div className='pokemon-height'>

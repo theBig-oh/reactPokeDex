@@ -129,6 +129,13 @@ $containerBackground: #000000;
       }
 
 /* 
+    Dynamic Pokemon Type Color scheme/palette 
+
+    See settings.scss for color hex
+
+ */
+
+/* 
       &.pkmn_ghost  {
         @include content($ghostDarkerPurple,$ghostWhite, $ghostMidPurple);
       }
