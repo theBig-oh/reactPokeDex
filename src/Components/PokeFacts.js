@@ -1,7 +1,8 @@
 import React, { Component }  from 'react';
 import { Link } from 'react-router-dom';
 import GetPKMN from './GetPKMN';
-import PokeTypes from './PokeTypes.js'
+import PokeTypes from './PokeTypes';
+import PokemonPhysical from './PokemonPhysical';
 
 
 export default class PokeFacts extends Component {
@@ -106,34 +107,8 @@ export default class PokeFacts extends Component {
                                 </div>
 
                                 <div className='pokemon-content-container'>
-                                  <div className='pokemon-physical'> 
-                                    <div className='pokemon-height'>
 
-                                    </div>
-
-                                    <div className='pokemon-weight'>
-
-
-                                    </div> 
-
-                                    <div className='pokemon-region'>
-
-
-                                    </div>
-
-                                    <div className='pokemon-stats'>
-                                      <div className='pokemon-stats-baseLvl'>
-
-                                      </div>
-
-                                      <div className='pokemon-stats-maxLvl'>
-
-
-                                      </div>
-
-                                    </div>
-
-                                  </div>
+                                  <PokemonPhysical pkColors={pokemonColor}/>
 
                                 </div>
 
