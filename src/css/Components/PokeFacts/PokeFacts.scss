@@ -1,8 +1,15 @@
 @import '../../settings.scss';
 
+$containerBackground: #000000;
+
+
 .poke-facts {
   border: 5px solid black;
   height: 100%;
+
+
+
+
 
   .loaded-content {
     height: 100%;
@@ -13,12 +20,24 @@
       height: 100%;
       margin: 0 5%;
       display: flex;
+      justify-content: space-evenly;
+
+
+
+
+
 
       .pokemon-image-nav-container {
         border-radius: 10px;
+        border: 4px solid;
         width: 25%;
         height: 100%;
-        background: #9b9c82;
+        background: $containerBackground;
+        padding: 1%;
+        transition: all 0.3s ease;
+        -webkit-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+        -moz-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+        box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);   
         .pokemon-image-container {
           height: 43.33%;
           display: flex;
@@ -28,8 +47,89 @@
             width: 56%;
           }
         }
+        .pokemon-name-container {
+          
+          font-family: $gameText;
+          font-size: 2em;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          > div {
+          
+            display: flex;
+            justify-content: center;
+          }
+          .pokemon-name {
+            width: 70%;
+
+          }
+          .pokemon-id {
+            width: 30%;
+          }
+          .pokemon-types-container {
+            display: flex; 
+            justify-content: space-evenly;
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .typeText {
+              border-bottom: 3px solid black;
+              justify-content: left;
+              width: 100%;
+            }
+
+            .pokemon-type-container {
+              display: flex;
+              justify-content: space-evenly;
+              width: 100%;
+              flex-wrap: wrap;
+              flex-direction: row-reverse;
+
+              > div {
+                width: 40%;
+                text-align: center;
+              }
+
+
+            }
+          }
+        }
+      }
+      .pokemon-content-container {
+        width: 65%;
+        height: 100%;
+        display: flex;
+        border: 5px solid yellow;
+        transition: all 0.3s ease;
+        -webkit-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+        -moz-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+        box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);   
       }
 
+
+      &.pkmn_ghost * {
+        @include content($ghostDarkerPurple,$ghostWhite, $ghostMidPurple);
+      }
+
+      &.pkmn_fire * {
+         @include content($fireBurntRed,$fireWhite, $fireDarkRed);
+      } 
+      &.pkmn_water * {
+        @include content($waterDarkBlue,#fff, $waterLightBlue);
+      }
+      &.pkmn_grass * {
+        @include content($grassDarkGreen, #fff, $grassFlowerRed);
+      }
+      &.pkmn_bug * {
+        @include content($bugDarkGreen, #fff, $bugNeutralGreen);
+      }
+      &.pkmn_flying * {
+        @include content($ghostMidPurple, #000, $ghostDarkPurple);
+      }
+      &.pkmn_poison * {
+        @include content($poisonPurple, #000, $ghostDarkerPurple);
+      }
     }
 
   }

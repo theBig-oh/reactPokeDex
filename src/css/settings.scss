@@ -1,3 +1,6 @@
+@import '_mixins.scss';
+
+
 @font-face {
 
   font-family:"Arcade"; 
@@ -13,3 +16,54 @@ $darkestGreen: #29343a;
 $darkGreen: #415142;
 $midGreen: #75844d;
 $lightGreen: #aab56f;
+
+
+
+
+// Pokemon Type colors 
+
+//Normal Type 
+$normalLight: #eedebd;
+$normalDirtyLight: #bdb494;
+$normalDarkBrown: #7b624a;
+$normalDarkerBrown: #5a4131;
+
+
+// Ghost Type 
+
+$ghostDarkerPurple: #4a294a;
+$ghostDarkPurple: #5a4a9c;
+$ghostMidPurple: #b48bbd; 
+$ghostWhite: #fff6ff;
+
+// Fire Type 
+
+$fireBurntRed: #8b2900;
+$fireDarkRed: #de5239;
+$fireRed: #e63900;
+$fireYellow: #ffd508;
+$fireWhite: #fff;
+
+// Water Type 
+
+$waterDarkBlue: #297383;
+$waterLightBlue: #8bc5cd;
+$waterDarkSand: #e6ac5a;
+$waterLightSand: #ffd56a;
+
+// Grass Type 
+
+$grassDarkGreen: #416a10;
+$grassLightGreen: #bdff73;
+$grassFlowerRed: #b44131;
+
+//Bug Type 
+
+$bugLightGreen: #acf641;
+$bugDarkGreen: #185a41;
+$bugNeutralGreen: #207b4a;
+
+// Poison Type 
+$poisonPurple: #c080be;
+
+

@@ -1,0 +1,5 @@
+@mixin content($color-default, $color-main, $borderColor) {
+  background: $color-default;
+  color: $color-main;
+  border-color: $borderColor;
+}
