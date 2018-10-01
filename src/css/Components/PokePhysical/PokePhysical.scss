@@ -6,12 +6,12 @@
     display: flex;
     height: 100%;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
     > div {
       width: 23%;
-      margin: 1% 1%;
+      margin: 0.5% 1%;
       padding: 1%;
-      height: 55%;
+      height: 47%;
       .pkmn-phys-title {
         font-size: 2em;
         font-family: $gameText;
@@ -22,6 +22,8 @@
 
     }
     .pokemon-habitat {
+      order: 5;
+      margin-bottom: -246px;
       .pkmn-habitat {
 
         height: 100%;
@@ -91,6 +93,8 @@
     }
 
     .pokemon-abilities {
+      order: 4;
+      margin-bottom: -246px;
       .pokemonAbilities {
         padding-top: 1%;
         height: 80%;
@@ -134,13 +138,15 @@
     }
 
 
-    .pokemon-weight {
+    .pokemon-weight { 
+      order: 2;
       .pokemonWeight {
         font-size: 1.8em;
         font-family: $gameText;
       }
     }
     .pokemon-height {
+      order: 1;
       .pokemonHeight {
         font-size: 1.8em;
         font-family: $gameText;
@@ -167,8 +173,9 @@
     }
 
     .pokemon-stats {
-      width: 100%;
-      height: 35%;
+      order: 3;
+      width: 48%;
+      height: 96%;
        .pkmn-phys-title  {
         font-size: 1.5em;
        }
