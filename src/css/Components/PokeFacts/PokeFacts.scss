@@ -104,6 +104,7 @@ $containerBackground: #000000;
         height: 100%;
         display: flex;
         border: 5px solid yellow;
+        border-radius: 10px;
         transition: all 0.3s ease;
         -webkit-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
         -moz-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
@@ -141,9 +142,9 @@ $containerBackground: #000000;
      &.pkmn_flying  {
         @include content($ghostMidPurple, #000, $ghostDarkPurple, #fffafa , $ghostMidPurple);
       }
-/*      &.pkmn_poison  {
-        @include content($poisonPurple, #000, $ghostDarkerPurple);
-      } */
+      &.pkmn_poison  {
+        @include content($poisonPurple, #000, $ghostDarkerPurple,rgba(255,255,255,0.4), $poisonLightPurple);
+      } 
     }
 
 

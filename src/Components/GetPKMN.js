@@ -57,7 +57,7 @@ export default class GetPKMN {
 						if(this.hasLocal) {
 							if(storeType != 'PKMNList') {
 								console.log(`Setting ${pokeType} into sessionStorage`);
-								if(sessionStorage.length == 28) {
+								if(sessionStorage.length >= 28) {
 									sessionStorage.clear();
 									console.log('clearing out sessionStorage due to max limit');
 								}

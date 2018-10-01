@@ -77,22 +77,60 @@ function PkWeight(pkWeight) {
 
 
 function PkHabitat(pkHabitat) {
+  let namedHab = {};
+  if(pkHabitat.pkHabitat == null) {
+    namedHab.name = 'No Habitat';
+  } else {
+    namedHab.name = pkHabitat.pkHabitat.name;
+  }
 
   return (
     <div className='pokemonHabitat'> 
       <div className='habitatName'>
-        {pkHabitat.pkHabitat.name}
+        {namedHab.name}
       </div>
-      <div className={`habitatImage ${pkHabitat.pkHabitat.name}`}>
-
+      <div className={`habitatImage ${namedHab.name}`}>
       </div>
-
-
     </div>
 
     )
 }
 
+function PkAbilities(Abilities) {
+  const PkAbil = () => {
+    return Abilities.Abilities.map((abil,i) => {
+      console.log(abil);
+        
+      const abilName = abil.ability.name;
+      console.log(abilName);
+      if(abil.is_hidden) {
+        return (
+          <div key={i} className='hidden-abil abil'>
+            {abilName}
+          </div>
+        )
+      } else {
+        return (
+          <div key={i} className='abil'>
+
+          {abilName}
+          </div>
+        )
+      } 
+
+    })
+  }
+
+
+
+  return (
+      <div className='pokemonAbilities'>
+
+        {PkAbil()}
+      </div>
+
+    )
+}
 
 export default class PokemonPhysical extends Component {
   constructor() {
@@ -105,6 +143,7 @@ export default class PokemonPhysical extends Component {
     const height = this.props.pokeInfo.height;
     const weight = this.props.pokeInfo.weight;
     const habitat = this.props.pokeInf.habitat;
+    const abile = this.props.pokeInfo.abilities;
     console.log(habitat);
     return (
         <div className={`pokemon-physical ${pkColor}`}> 
@@ -131,11 +170,11 @@ export default class PokemonPhysical extends Component {
 
             </div>
           </div>
-          <div className='pokemon-region innerContainer'>
+          <div className='pokemon-abilities innerContainer'>
             <div className='pkmn-phys-title innerTitle'>
               Abilities
             </div>
-
+            <PkAbilities Abilities={abile} />
           </div>
           <div className='pokemon-stats innerContainer'>
             <div className='pkmn-phys-title innerTitle'>

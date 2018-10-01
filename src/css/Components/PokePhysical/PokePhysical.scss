@@ -11,12 +11,13 @@
       width: 23%;
       margin: 1% 1%;
       padding: 1%;
-      height: 43%;
+      height: 55%;
       .pkmn-phys-title {
         font-size: 2em;
         font-family: $gameText;
         width: 95%;
         border-bottom: 4px solid black;
+        margin-bottom: 8%;
       }
 
     }
@@ -88,6 +89,51 @@
         }
       }
     }
+
+    .pokemon-abilities {
+      .pokemonAbilities {
+        padding-top: 1%;
+        height: 80%;
+        > .abil {
+          border: 4px solid white;
+          border-radius: 10px;
+
+          margin: 5% 5%;
+          display: flex;
+          width: 90%; 
+          justify-content: center;
+          align-items: center;
+          font-family: $gameText;
+          font-size: 1.5em;
+          
+          background: white;
+          color: black;
+
+
+          &.hidden-abil {
+            background: $ghostMidPurple;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            color: white;
+            &::before {
+              content: 'Hidden   Ability';
+              display: block;
+              position: absolute;
+              margin-top: -25px;
+              color: black;
+              background: white;
+              padding: 0 10px;
+              border-radius: 10px;
+              font-size: 0.75em;
+            }
+          }
+        }
+      }
+
+    }
+
+
     .pokemon-weight {
       .pokemonWeight {
         font-size: 1.8em;
@@ -122,5 +168,9 @@
 
     .pokemon-stats {
       width: 100%;
+      height: 35%;
+       .pkmn-phys-title  {
+        font-size: 1.5em;
+       }
     }
 }
