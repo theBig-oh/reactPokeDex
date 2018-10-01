@@ -32,12 +32,12 @@ export default class GetPKMN {
 	*/
 
 	makeCall(callType,id,pokeType) {
-		return new Promise((resolve, reject) => {
+		const results = new Promise((resolve, reject) => {
 			console.log('started the promise!');
 			const xhr = new XMLHttpRequest();
 
 			let storeType = null;
-			let apiCallType = 'http://pokeapi.salestock.net/api/v2/'+callType+'/'+id;
+			let apiCallType = 'https://pokeapi.co/api/v2/'+callType+'/'+id+'/';
 			let list; 
 			
 			console.log(apiCallType);
@@ -57,6 +57,10 @@ export default class GetPKMN {
 						if(this.hasLocal) {
 							if(storeType != 'PKMNList') {
 								console.log(`Setting ${pokeType} into sessionStorage`);
+								if(sessionStorage.length == 28) {
+									sessionStorage.clear();
+									console.log('clearing out sessionStorage due to max limit');
+								}
 								sessionStorage.setItem(storeType, list);
 							} else {
 								console.log(`Setting ${pokeType} into localStorage`);
@@ -94,5 +98,7 @@ export default class GetPKMN {
 				xhrCall();
 			}
 		})
+
+		return results
 	}
 }

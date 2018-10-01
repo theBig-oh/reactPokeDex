@@ -11,18 +11,27 @@
 
    */
 
-  .pokemon-image-nav-container, .pokemon-content-container {
+  .baseContainer {
     background: $color-default !important;
     color: $color-main !important;
     border-color: $borderColor !important;
 
-    .pokemon-image-container {
+    .innerContainer {
       
       border: 4px solid;
       border-radius: 10px;
       border-color: $innerBorder;
-      background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAKElEQVQoU2PUNLH6f/3MMUYGPACkBq8CZL2DSSEuzw2AG2FOYSQ2wAHTGRM3I5z+CgAAAABJRU5ErkJggg==)repeat, $innerBG;
- 
+      /* background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAKElEQVQoU2PUNLH6f/3MMUYGPACkBq8CZL2DSSEuzw2AG2FOYSQ2wAHTGRM3I5z+CgAAAABJRU5ErkJggg==)repeat, $innerBG; */
+      background: $innerBG;
+      -webkit-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+      -moz-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+      box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);   
+
+
+      .innerTitle {
+        border-color:  $color-main;
+      }
+
     }
 
   }

@@ -12,7 +12,7 @@ export default class PokeFacts extends Component {
       pokemonStats: {},
       pokemonDex: {},
       currentInfo: 0,
-      hasLoaded: false,
+      hasLoaded: 0,
       pokemonColor: null,
     }
     this.setPokemonFacts = this.setPokemonFacts.bind(this);
@@ -24,26 +24,28 @@ export default class PokeFacts extends Component {
     const pokeApis = ['pokemon','pokemon-species'];
     const getPKMN = new GetPKMN;
     const getPoke = new GetPKMN;
+
      
     getPoke.makeCall(pokeApis[0],pokeID,pokeApis[0]).then((data) => {
+      return data;
+    }).then(data => {
+      let loadState = this.state.hasLoaded + 1;
       this.setState({
         pokemonStats: data,
-        currentPKMN: pokeID
+        hasLoaded: loadState,
       })
     })
-    getPKMN.makeCall(pokeApis[1],pokeID,pokeApis[1]).then((data) => {
-      if(data === undefined) {
-        console.log('data is still undefined');
-
-      } else {
-        this.setState({
-          pokemonDex: data,
-          hasLoaded: true,
-        })
-
-        console.log('data has loaded');
-      }
+    getPKMN.makeCall(pokeApis[1],pokeID,pokeApis[1]).then((datar) => {
+      return datar;
+    }).then(datar => {
+      let loadState = this.state.hasLoaded + 1;
+      this.setState({ 
+        pokemonDex: datar,
+        hasLoaded: loadState,
+      })
     })
+
+
   }
 
   setPokemonColors(pkmnColor) {
@@ -54,6 +56,9 @@ export default class PokeFacts extends Component {
   }
 
   componentWillMount() {
+    this.setPokemonFacts();
+  }
+  componentDidMount() {
     this.setPokemonFacts();
   }
   render() {
@@ -78,8 +83,8 @@ export default class PokeFacts extends Component {
 
     const loadedContent =  <div className='loaded-content'>
                               <div className={`pokemon-container ${pokemonColor} `}> 
-                                <div className='pokemon-image-nav-container'>
-                                  <div className='pokemon-image-container'>
+                                <div className='pokemon-image-nav-container baseContainer'>
+                                  <div className='pokemon-image-container innerContainer'>
                                     <div className={`pokemon-image `} style={mainPkmnImage}>
 
                                     </div>
@@ -106,9 +111,9 @@ export default class PokeFacts extends Component {
                                   </div>
                                 </div>
 
-                                <div className='pokemon-content-container'>
+                                <div className='pokemon-content-container baseContainer'>
 
-                                  <PokemonPhysical pkColors={pokemonColor}/>
+                                  <PokemonPhysical pkColors={pokemonColor} pokeInfo={pokemonInfo[1]} pokeInf = {pokemonInfo[0]}/>
 
                                 </div>
 
@@ -125,7 +130,7 @@ export default class PokeFacts extends Component {
 
 
     const hasLoaded = () => {
-      let loadedState = this.state.hasLoaded ? loadedContent : loadingScreen;
+      let loadedState = this.state.hasLoaded == 4 ? loadedContent : loadingScreen;
       return loadedState
     }
 
