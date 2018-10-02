@@ -134,11 +134,44 @@ function PkAbilities(Abilities) {
 
 function PkStats(Stats) {
   console.log(Stats);
+  
+  const stats = Stats.stats.map((stat,i) => {
+    let EVpoint = stat.effort;
+
+    console.log(EVpoint);
+
+    let statPoint = stat.base_stat;
+    let statName = stat.stat.name;
+
+    let statPointConvert =  ((statPoint/255)*100).toFixed(1);
+
+    console.log(EVpoint, statPoint, statName, statPointConvert);
+
+    let widthConvert = {
+      width: statPointConvert + '%',
+    }
+    
+    return (
+      <div className={`stats ${statName}`}>
+        <div className='statName'>
+          <div className='statPoints'>{statName}: {statPoint}</div>   <div className='evpoint'> EV:    + {EVpoint} </div>
+        </div>
+        <div className={`statBackground `} style={widthConvert}>
+
+        </div>
+        
+      </div>
+      
+    )
+
+
+
+  })
 
   return (
       <div className='stats-container'>
 
-
+      {stats}
       </div> 
 
     )

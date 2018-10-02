@@ -31,7 +31,7 @@
         display: flex;
         .pokemonHabitat {
           display: flex;
-          height:100%;
+          height:80%;
           flex-wrap: wrap;
           justify-content: center;
           width: 100%;
@@ -178,6 +178,82 @@
       height: 96%;
        .pkmn-phys-title  {
         font-size: 1.5em;
+       }
+
+       .pokemon-stats-baseLvl {
+        
+        display: flex;
+        height: 80%;
+
+        .stats-container {
+          
+          display: flex;
+          width: 100%;
+          flex-direction: row;
+          flex-wrap: wrap;
+          flex-flow: column-reverse;
+          padding: 0 1%;
+          .stats {
+            width: 100%; 
+            border-left: 3px solid black;
+            border-right: 3px solid black;
+            
+            margin: 1% 0%;
+            height: 25%;
+            font-family: $gameText;
+            font-size: 1.6em;
+              
+              .statName {
+                position: relative;
+                z-index: 2;
+                padding-left: 10px;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                height: 100%;
+
+              }
+
+              .statBackground {
+                position: relative;
+                height: 100%;
+                bottom: 53px;
+                z-index: 1;
+                
+              }
+
+              &.hp {
+                .statBackground {
+                  background: $hp;
+                }
+              }
+              &.attack {
+                .statBackground {
+                  background: $attack;
+                }
+              }
+              &.defense {
+                .statBackground {
+                  background: $defense;
+                }
+              }
+              &.special-attack {
+                .statBackground {
+                  background: $spAtk;
+                }
+              }
+              &.special-defense {
+                .statBackground {
+                  background: $spDef;
+                }
+              }
+              &.speed {
+                .statBackground {
+                  background: $speed;
+                }
+              }
+          }
+        }
        }
     }
 }

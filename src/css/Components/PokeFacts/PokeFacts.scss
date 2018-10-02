@@ -145,6 +145,40 @@ $containerBackground: #000000;
       &.pkmn_poison  {
         @include content($poisonPurple, #000, $ghostDarkerPurple,rgba(255,255,255,0.4), $poisonLightPurple);
       } 
+      &.pkmn_normal {
+        @include content($normalDirtyLight,  #000, $normalDarkerBrown, $normalDarkBrown, $normalLight, );
+      }
+      &.pkmn_fighting {
+        @include content($fightingDarkRed, #FFF, $fightingLightRed, $fightingMainRed, $fightingBorderRed);
+      }
+      &.pkmn_electric {
+        @include content($elecMainYellow, #fff, $elecLightBrown, $elecSubYellow, $elecSubBrown);
+      }
+      &.pkmn_ground {
+        @include content($groundMainShade, #000, $groundDarkMain, $groundDarkShade, $groundLightShade);
+      }
+      &.pkmn_psychic {
+        @include content($psyMainShade, #fff, $psyMainDark, $psyDarkShade, $psyDarkLight);
+      }
+      &.pkmn_rock {
+        @include content( $rockMainDark, #fff, $rockMainShade, $rockDarkShade, $rockDarkLight);
+      }
+      &.pkmn_ice {
+        @include content($iceMainShade, #000, $iceMainDark, $iceDarkShade, $iceDarkLight);
+      }
+      &.pkmn_dragon {
+        @include content($dragonMainShade, #fff, $dragonMainDark, $dragonDarkShade, $dragonDarkLight)
+      }
+      &.pkmn_dark {
+        @include content($darkDarkShade, #fff, $darkMainShade, $darkDarkLight, $darkMainDark);
+      }
+      &.pkmn_steel {
+        @include content($steelMainShade, #000, $steelMainDark, $steelDarkShade, $steelDarkLight);
+      }
+      &.pkmn_fairy {
+        @include content($fairyMainShade, #fff, $fairyMainDark, $fairyDarkShade, $fairyDarkLight);
+      }
+
     }
 
 
