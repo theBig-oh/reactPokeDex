@@ -132,6 +132,18 @@ function PkAbilities(Abilities) {
     )
 }
 
+function PkStats(Stats) {
+  console.log(Stats);
+
+  return (
+      <div className='stats-container'>
+
+
+      </div> 
+
+    )
+}
+
 export default class PokemonPhysical extends Component {
   constructor() {
     super();
@@ -144,7 +156,10 @@ export default class PokemonPhysical extends Component {
     const weight = this.props.pokeInfo.weight;
     const habitat = this.props.pokeInf.habitat;
     const abile = this.props.pokeInfo.abilities;
-    console.log(habitat);
+    const pkStats = this.props.pokeInfo.stats;
+
+    console.log(pkStats);
+    
     return (
         <div className={`pokemon-physical ${pkColor}`}> 
           <div className='pokemon-height innerContainer'>
@@ -181,7 +196,11 @@ export default class PokemonPhysical extends Component {
               Stats Attributes 
             </div>                                      
             <div className='pokemon-stats-baseLvl'>
-                {/* Add Stats in bar format then EV int at the end with a "+" sign */}
+                {
+                  /* Add Stats in bar format then EV int at the end with a "+" sign */
+  
+                <PkStats stats={pkStats} />
+              }
             </div>
 
 
