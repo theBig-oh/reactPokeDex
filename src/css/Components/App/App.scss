@@ -37,18 +37,49 @@
   }
 }
 
+@media (max-width: 990px) and (min-width: 500px) {
+  .bodyContain {
+    .grid-background{ 
+      padding: 0;
+
+      canvas {
+        max-width: 100vw;
+      }
+    }
+
+    .content-wrapper {
+      .top-layer, .bottom-layer {
+        height: 14%;
+      }
+      .body-content {
+        height: 71%;
+        margin-bottom: 1%;
+      }
+    }
+  }
+
+}
+
 
 
 
 
 @media (max-width: 500px) {
   .bodyContain {
+    .grid-background {
+      padding:0;
+        canvas {
+          max-width: 100vw;
+        }
+      }    
     .content-wrapper {
       .top-layer, .bottom-layer {
         height: 16%;
       }
       .body-content {
         height: 70%;
+
+
       }
     }
   }

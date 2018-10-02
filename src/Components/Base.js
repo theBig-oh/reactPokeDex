@@ -215,15 +215,17 @@ class App extends React.Component {
   console.log(window.innerWidth);
 
   let canvas = ReactDOM.findDOMNode(this.refs.gridcanvas);
- /* let mobileCanvas = ReactDOM.findDOMNode(this.refs.mobilegridcanvas);*/
+  let mobileCanvas = ReactDOM.findDOMNode(this.refs.mobilegridcanvas);
   
   
 
-  const gridfield = new GridBlocks(100);
-  const mobilegrid = new GridBlocks(50);
+  const gridfield = new GridBlocks(500);
+  const mobilegrid = new GridBlocks(70);
   gridfield.initialize(canvas);
   gridfield.start();
 
+  mobilegrid.initialize(mobileCanvas);
+  mobilegrid.start()
 
   }
   render() { 
@@ -258,7 +260,9 @@ class App extends React.Component {
     console.log(this.props);
     
     return (
-      <div ref='gridcanvas' className='bodyContain'>
+      <div  className='bodyContain '>
+        <div ref='gridcanvas' className="grid-background hidden-xs hidden-sm col-md-12 col-lg-12"></div>
+        <div ref='mobilegridcanvas' className=" grid-background col-xs-12 col-sm-12 hidden-md hidden-lg"></div>
         <div className='content-wrapper'>
           <div className='top-layer'>  </div>
           <div className='body-content'> 

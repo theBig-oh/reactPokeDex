@@ -257,3 +257,53 @@
        }
     }
 }
+
+
+@media (min-width: 500px) and (max-width: 990px) {
+
+  .pokemon-physical {
+    flex-wrap: wrap !important;
+
+    > div {
+      margin: 0.5% 2% !important;
+    }
+
+    .innerContainer:not(.pokemon-stats) {
+      width: 46%;
+      font-size: 0.7em;
+      height: 25%;
+    }
+
+
+    .pokemon-height {
+      order: 1;
+    }
+    .pokemon-weight {
+      order: 2;
+    }
+    .pokemon-habitat {
+      order: 3;
+    }
+    .pokemon-abilities {
+      order: 4;
+    }
+    .pokemon-stats {
+      order: 5;
+      height: 40%;
+      width: 100%;
+
+      .pokemon-stats-baseLvl {
+        .stats-container {
+          height: 76%;
+          .stats {
+            height: 13%;
+            .statBackground {
+              bottom: 22px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
