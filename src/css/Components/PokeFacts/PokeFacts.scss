@@ -216,3 +216,10 @@ $containerBackground: #000000;
 
   }
 }
+
+
+@media (min-width: 1900px) and (max-height: 987px) {
+  .loaded-content {
+    height: 107% !important;
+  }
+}

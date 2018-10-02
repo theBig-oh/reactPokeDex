@@ -183,6 +183,7 @@ class App extends React.Component {
       data: [],
       maxPKMN: [],
       hasLoaded: false,
+      isMobile: false,
     }
   }
 
@@ -210,15 +211,20 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+
+  console.log(window.innerWidth);
+
   let canvas = ReactDOM.findDOMNode(this.refs.gridcanvas);
  /* let mobileCanvas = ReactDOM.findDOMNode(this.refs.mobilegridcanvas);*/
-  const gridfield = new GridBlocks(500);
+  
+  
+
+  const gridfield = new GridBlocks(100);
   const mobilegrid = new GridBlocks(50);
   gridfield.initialize(canvas);
   gridfield.start();
 
-/*  mobilegrid.initialize(mobileCanvas);
-  mobilegrid.start();*/
+
   }
   render() { 
     const allpkmn = [];
@@ -246,6 +252,9 @@ class App extends React.Component {
 
 
 */
+
+
+
     console.log(this.props);
     
     return (

@@ -8,13 +8,18 @@
   
   
 
-  .desktop-screen {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
+  .body-stuff  {
+    &.desktop-screen {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    &.mobile-screen {
+      display: none;
+    }
     .pokemon-selection {
       display: flex;
       width: 32%;
@@ -102,6 +107,37 @@
           background:rgba(111,120,127,1) !important;
         }
       }
+    }
+  }
+}
+
+
+@media (max-width: 990px) and (min-width: 500px) {
+  .home-screen {
+    height: 100%;
+    .desktop-screen {
+      height: inherit;
+
+      .pokemon-selection {
+        .poke-name {
+          .pokemon-selection-name {
+            font-size: 1.6em;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 500px) {
+  .home-screen {
+    height: 100%;
+    .desktop-screen {
+      display: none !important;
+    }
+    .mobile-screen {
+      display: block !important;
     }
   }
 }

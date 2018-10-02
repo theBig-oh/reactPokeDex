@@ -36,3 +36,20 @@
     z-index:0;
   }
 }
+
+
+
+
+
+@media (max-width: 500px) {
+  .bodyContain {
+    .content-wrapper {
+      .top-layer, .bottom-layer {
+        height: 16%;
+      }
+      .body-content {
+        height: 70%;
+      }
+    }
+  }
+}
