@@ -152,7 +152,7 @@ function PkStats(Stats) {
     }
     
     return (
-      <div className={`stats ${statName}`}>
+      <div key={i} className={`stats ${statName}`}>
         <div className='statName'>
           <div className='statPoints'>{statName}: {statPoint}</div>   <div className='evpoint'> EV:    + {EVpoint} </div>
         </div>
