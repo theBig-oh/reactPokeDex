@@ -62,8 +62,14 @@
 # with the same name does not exist.
 # http://httpd.apache.org/docs/current/content-negotiation.html#multiviews
 # http://www.webmasterworld.com/apache/3808792.htm
-
-Options -MultiViews
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+</IfModule>
 
 # ------------------------------------------------------------------------------
 # | Custom error messages / pages                                              |
