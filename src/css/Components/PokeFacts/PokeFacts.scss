@@ -250,3 +250,37 @@ $containerBackground: #000000;
     }
   }
 }
+
+
+
+
+@media (max-width: 500px) {
+  .loaded-content {
+    .pokemon-container {
+      flex-direction: row;
+      justify-content: center !important;
+      flex-wrap: wrap;
+      overflow-y: scroll !important;
+      overflow-x: hidden !important;
+      > div {
+        width: 100% !important; 
+      }
+
+      .pokemon-image-nav-container {
+        width: 75% !important;
+        height: 60% !important;
+        font-size: 0.75em !important;
+      }
+
+      .pokemon-content-container {
+        height: 160% !important;
+        margin-top: 5%;
+      }
+    }
+    .linkContainer  a {
+      height: 31% !important;
+      width: 31% !important;
+      font-size: 1.3em !important;
+    }
+  }
+}

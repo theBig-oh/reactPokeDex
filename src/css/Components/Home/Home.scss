@@ -157,5 +157,15 @@
         }
       }
     }
+    .page-button-container {
+
+      .pagination {
+        width: 95%;
+        margin-top: 8%;
+        > li {
+          font-size: 1em !important;
+        }
+      }
+    }
   }
 }

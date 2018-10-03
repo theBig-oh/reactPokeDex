@@ -63,7 +63,7 @@
               background-size: 100% 100%;
 
             }
-            &.grasslands {
+            &.grassland {
               background: url(/assets//assets/images/habitats/grasslands.png) no-repeat;
               background-size: 100% 100%;              
             }
@@ -297,6 +297,66 @@
           height: 76%;
           .stats {
             height: 13%;
+            .statBackground {
+              bottom: 22px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+@media (max-width: 500px)  {
+
+  .pokemon-physical {
+    flex-wrap: wrap !important;
+
+    > div {
+      margin: 0.5% 2% !important;
+    }
+
+    .innerContainer:not(.pokemon-stats) {
+      width: 46%;
+      font-size: 0.7em;
+      height: 25%;
+    }
+
+
+    .pokemon-height {
+      order: 1;
+    }
+    .pokemon-weight {
+      order: 2;
+    }
+    .pokemon-habitat {
+      order: 3;
+    }
+    .pokemon-abilities {
+      order: 4;
+      .pokemonAbilities {
+
+        .hidden-abil {
+          &::before {
+            position: relative !important;
+            margin-top: -12px !important;
+          }
+        }
+      }
+    }
+    .pokemon-stats {
+      order: 5;
+      height: 40%;
+      width: 100%;
+
+      .pokemon-stats-baseLvl {
+        .stats-container {
+          height: 76%;
+          .stats {
+            height: 13%;
+            font-size: 1em !important;
             .statBackground {
               bottom: 22px !important;
             }
