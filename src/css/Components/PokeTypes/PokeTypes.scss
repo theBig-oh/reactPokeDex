@@ -1,0 +1,23 @@
+@import '../../settings.scss';
+
+
+.pokemon-type-container {
+  padding-top: 5%;
+  > div {
+    border: 4px solid;
+    border-radius: 5px;
+
+    -webkit-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+    -moz-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+    box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);   
+  }
+
+  .type_bug {
+    @include typeColor($bugNeutralGreen, $bugDarkerGreen, #fff);
+  }
+
+  .type_flying {
+    @include typeColor($ghostMidPurple, $ghostWhite, #000);
+  }
+  
+}

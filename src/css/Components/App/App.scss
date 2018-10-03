@@ -1,11 +1,11 @@
 @import '../../settings.scss';
 
 .bodyContain {
-  border: 1px solid black;  
+
   display: flex;
   flex-direction: column;
   height: 100vh; 
-  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAHElEQVQYlWNgwATGUIxTghAm3kTqKxxAN1LXagDZFgjFdHIgnwAAAABJRU5ErkJggg==)repeat, #007F15;
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAKElEQVQoU2PUNLH6f/3MMUYGPACkBq8CZL2DSSEuzw2AG2FOYSQ2wAHTGRM3I5z+CgAAAABJRU5ErkJggg==)repeat, #007F15;
   
   .content-wrapper {
     position: absolute;
@@ -34,5 +34,53 @@
   canvas {
     position: absolute;
     z-index:0;
+  }
+}
+
+@media (max-width: 990px) and (min-width: 500px) {
+  .bodyContain {
+    .grid-background{ 
+      padding: 0;
+
+      canvas {
+        max-width: 100vw;
+      }
+    }
+
+    .content-wrapper {
+      .top-layer, .bottom-layer {
+        height: 14%;
+      }
+      .body-content {
+        height: 71%;
+        margin-bottom: 1%;
+      }
+    }
+  }
+
+}
+
+
+
+
+
+@media (max-width: 500px) {
+  .bodyContain {
+    .grid-background {
+      padding:0;
+        canvas {
+          max-width: 100vw;
+        }
+      }    
+    .content-wrapper {
+      .top-layer, .bottom-layer {
+        height: 16%;
+      }
+      .body-content {
+        height: 70%;
+
+
+      }
+    }
   }
 }

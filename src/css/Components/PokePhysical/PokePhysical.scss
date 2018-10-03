@@ -1,0 +1,369 @@
+@import '../../settings.scss';
+
+
+ .pokemon-physical {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    > div {
+      width: 23%;
+      margin: 0.5% 1%;
+      padding: 1%;
+      height: 47%;
+      .pkmn-phys-title {
+        font-size: 2em;
+        font-family: $gameText;
+        width: 95%;
+        border-bottom: 4px solid black;
+        margin-bottom: 8%;
+      }
+
+    }
+    .pokemon-habitat {
+      order: 5;
+      margin-bottom: -246px;
+      .pkmn-habitat {
+
+        height: 100%;
+        flex-wrap: wrap;
+        display: flex;
+        .pokemonHabitat {
+          display: flex;
+          height:80%;
+          flex-wrap: wrap;
+          justify-content: center;
+          width: 100%;
+          .habitatName {
+            
+            width: 100%;
+            height:10%;
+            font-size: 1.7em;
+            font-family: $gameText;
+          }
+          .habitatImage {
+            height: 56%;
+            width: 72%;
+
+
+
+            &.waters-edge {
+              background: url(/assets//assets/images/habitats/waters-edge.png) no-repeat;
+              background-size: 100% 100%;
+
+            }
+           &.mountain {
+              background: url(/assets//assets/images/habitats/mountain.png) no-repeat;
+              background-size: 100% 100%;
+
+            }
+           &.cave {
+              background: url(/assets//assets/images/habitats/cave.png) no-repeat;
+              background-size: 100% 100%;
+
+            }
+            &.grassland {
+              background: url(/assets//assets/images/habitats/grasslands.png) no-repeat;
+              background-size: 100% 100%;              
+            }
+            &.urban {
+              background: url(/assets//assets/images/habitats/urban.png) no-repeat;
+              background-size: 100% 100%;
+            }
+            &.rough-terrain {
+              background: url(/assets//assets/images/habitats/rough-terrain.png) no-repeat;
+              background-size: 100% 100%;
+            }
+            &.sea {
+              background: url(/assets//assets/images/habitats/sea.png) no-repeat;
+              background-size: 100% 100%;
+            }            
+            &.forest {
+              background: url(/assets//assets/images/habitats/forest.png) no-repeat;
+              background-size: 100% 100%;
+            }
+            &.rare {
+              background: url(/assets//assets/images/habitats/rare.png) no-repeat;
+              background-size: 100% 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .pokemon-abilities {
+      order: 4;
+      margin-bottom: -246px;
+      .pokemonAbilities {
+        padding-top: 1%;
+        height: 80%;
+        > .abil {
+          border: 4px solid white;
+          border-radius: 10px;
+
+          margin: 5% 5%;
+          display: flex;
+          width: 90%; 
+          justify-content: center;
+          align-items: center;
+          font-family: $gameText;
+          font-size: 1.5em;
+          
+          background: white;
+          color: black;
+
+
+          &.hidden-abil {
+            background: $ghostMidPurple;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            color: white;
+            &::before {
+              content: 'Hidden   Ability';
+              display: block;
+              position: absolute;
+              margin-top: -25px;
+              color: black;
+              background: white;
+              padding: 0 10px;
+              border-radius: 10px;
+              font-size: 0.75em;
+            }
+          }
+        }
+      }
+
+    }
+
+
+    .pokemon-weight { 
+      order: 2;
+      .pokemonWeight {
+        font-size: 1.8em;
+        font-family: $gameText;
+      }
+    }
+    .pokemon-height {
+      order: 1;
+      .pokemonHeight {
+        font-size: 1.8em;
+        font-family: $gameText;
+        
+
+        .height { 
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          .heightTotal {
+            display: flex;
+            flex-direction: row;
+
+            .convertHeight {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              width: 50%;
+            }
+          }
+        }
+
+      }
+    }
+
+    .pokemon-stats {
+      order: 3;
+      width: 48%;
+      height: 96%;
+       .pkmn-phys-title  {
+        font-size: 1.5em;
+       }
+
+       .pokemon-stats-baseLvl {
+        
+        display: flex;
+        height: 80%;
+
+        .stats-container {
+          
+          display: flex;
+          width: 100%;
+          flex-direction: row;
+          flex-wrap: wrap;
+          flex-flow: column-reverse;
+          padding: 0 1%;
+          .stats {
+            width: 100%; 
+            border-left: 3px solid black;
+            border-right: 3px solid black;
+            
+            margin: 1% 0%;
+            height: 25%;
+            font-family: $gameText;
+            font-size: 1.6em;
+              
+              .statName {
+                position: relative;
+                z-index: 2;
+                padding-left: 10px;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                height: 100%;
+
+              }
+
+              .statBackground {
+                position: relative;
+                height: 100%;
+                bottom: 53px;
+                z-index: 1;
+                
+              }
+
+              &.hp {
+                .statBackground {
+                  background: $hp;
+                }
+              }
+              &.attack {
+                .statBackground {
+                  background: $attack;
+                }
+              }
+              &.defense {
+                .statBackground {
+                  background: $defense;
+                }
+              }
+              &.special-attack {
+                .statBackground {
+                  background: $spAtk;
+                }
+              }
+              &.special-defense {
+                .statBackground {
+                  background: $spDef;
+                }
+              }
+              &.speed {
+                .statBackground {
+                  background: $speed;
+                }
+              }
+          }
+        }
+       }
+    }
+}
+
+
+@media (min-width: 500px) and (max-width: 990px) {
+
+  .pokemon-physical {
+    flex-wrap: wrap !important;
+
+    > div {
+      margin: 0.5% 2% !important;
+    }
+
+    .innerContainer:not(.pokemon-stats) {
+      width: 46%;
+      font-size: 0.7em;
+      height: 25%;
+    }
+
+
+    .pokemon-height {
+      order: 1;
+    }
+    .pokemon-weight {
+      order: 2;
+    }
+    .pokemon-habitat {
+      order: 3;
+    }
+    .pokemon-abilities {
+      order: 4;
+    }
+    .pokemon-stats {
+      order: 5;
+      height: 40%;
+      width: 100%;
+
+      .pokemon-stats-baseLvl {
+        .stats-container {
+          height: 76%;
+          .stats {
+            height: 13%;
+            .statBackground {
+              bottom: 22px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+@media (max-width: 500px)  {
+
+  .pokemon-physical {
+    flex-wrap: wrap !important;
+
+    > div {
+      margin: 0.5% 2% !important;
+    }
+
+    .innerContainer:not(.pokemon-stats) {
+      width: 46%;
+      font-size: 0.7em;
+      height: 25%;
+    }
+
+
+    .pokemon-height {
+      order: 1;
+    }
+    .pokemon-weight {
+      order: 2;
+    }
+    .pokemon-habitat {
+      order: 3;
+    }
+    .pokemon-abilities {
+      order: 4;
+      .pokemonAbilities {
+
+        .hidden-abil {
+          &::before {
+            position: relative !important;
+            margin-top: -12px !important;
+          }
+        }
+      }
+    }
+    .pokemon-stats {
+      order: 5;
+      height: 40%;
+      width: 100%;
+
+      .pokemon-stats-baseLvl {
+        .stats-container {
+          height: 76%;
+          .stats {
+            height: 13%;
+            font-size: 1em !important;
+            .statBackground {
+              bottom: 22px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

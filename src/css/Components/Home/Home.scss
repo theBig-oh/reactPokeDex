@@ -8,13 +8,18 @@
   
   
 
-  .desktop-screen {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
+  .body-stuff  {
+    &.desktop-screen {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    &.mobile-screen {
+      display: none;
+    }
     .pokemon-selection {
       display: flex;
       width: 32%;
@@ -100,6 +105,65 @@
         &:hover {
           cursor: default;
           background:rgba(111,120,127,1) !important;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 990px) and (min-width: 500px) {
+  .home-screen {
+    height: 90%;
+    padding-top: 10%;
+    .desktop-screen {
+      height: inherit;
+
+      .pokemon-selection {
+        .poke-name {
+          .pokemon-selection-name {
+            font-size: 1.6em;
+          }
+        }
+      }
+    }
+    .page-button-container {
+      .pagination {
+        width: 63%;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 500px) {
+  .home-screen {
+    height: 100%;
+    .desktop-screen {
+      display: none !important;
+    }
+    .mobile-screen {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      flex-direction: column;
+
+      > div {
+        width: 100% !important;
+        margin-top: 3%;
+        .poke-name {
+          .pokemon-selection-name {
+            font-size: 2em !important;
+          }
+        }
+      }
+    }
+    .page-button-container {
+
+      .pagination {
+        width: 95%;
+        margin-top: 8%;
+        > li {
+          font-size: 1em !important;
         }
       }
     }

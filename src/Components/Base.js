@@ -183,6 +183,7 @@ class App extends React.Component {
       data: [],
       maxPKMN: [],
       hasLoaded: false,
+      isMobile: false,
     }
   }
 
@@ -210,15 +211,22 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+
+  console.log(window.innerWidth);
+
   let canvas = ReactDOM.findDOMNode(this.refs.gridcanvas);
- /* let mobileCanvas = ReactDOM.findDOMNode(this.refs.mobilegridcanvas);*/
+  let mobileCanvas = ReactDOM.findDOMNode(this.refs.mobilegridcanvas);
+  
+  
+
   const gridfield = new GridBlocks(500);
-  const mobilegrid = new GridBlocks(50);
+  const mobilegrid = new GridBlocks(70);
   gridfield.initialize(canvas);
   gridfield.start();
 
-/*  mobilegrid.initialize(mobileCanvas);
-  mobilegrid.start();*/
+  mobilegrid.initialize(mobileCanvas);
+  mobilegrid.start()
+
   }
   render() { 
     const allpkmn = [];
@@ -246,10 +254,15 @@ class App extends React.Component {
 
 
 */
+
+
+
     console.log(this.props);
     
     return (
-      <div ref='gridcanvas' className='bodyContain'>
+      <div  className='bodyContain '>
+        <div ref='gridcanvas' className="grid-background hidden-xs hidden-sm col-md-12 col-lg-12"></div>
+        <div ref='mobilegridcanvas' className=" grid-background col-xs-12 col-sm-12 hidden-md hidden-lg"></div>
         <div className='content-wrapper'>
           <div className='top-layer'>  </div>
           <div className='body-content'> 

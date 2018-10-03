@@ -164,16 +164,20 @@ class Home extends Component {
 
     return (
       <div className='home-screen app-body-content'>
-        <div className='desktop-screen'>
+        <div className='desktop-screen body-stuff'>
           {
             currentPKMN.map((pkmn,id) => {
               return <Pokemon key={id} pokemon={pkmn} />
             })
           }
         </div>
-        <div className={'mobile-screen'}>
-        
-
+        <div className={'mobile-screen body-stuff'}>
+          {
+            mobilePKMN.map((pkmn,id) => {
+              return <Pokemon key={id} pokemon={pkmn} />
+            })
+          }        
+          
 
         </div>
         <div className='page-button-container'>

@@ -1,3 +1,6 @@
+@import '_mixins.scss';
+
+
 @font-face {
 
   font-family:"Arcade"; 
@@ -7,3 +10,141 @@
 $gameText: 'Arcade', sans-serif;
 
 
+//Gameboy Classic Colors
+
+$darkestGreen: #29343a;
+$darkGreen: #415142;
+$midGreen: #75844d;
+$lightGreen: #aab56f;
+
+
+//StatColors 
+
+$hp: #ff0021;
+$attack: #ff7842;
+$defense: #ffc951;
+$spAtk: #5496e9;
+$spDef: #69c560;
+$speed: #ff5286;
+
+// Pokemon Type colors 
+
+//Normal Type 
+$normalLight: #eedebd;
+$normalDirtyLight: #bdb494;
+$normalDarkBrown: #7b624a;
+$normalDarkerBrown: #5a4131;
+
+
+// Ghost  
+
+$ghostDarkerPurple: #4a294a;
+$ghostDarkPurple: #5a4a9c;
+$ghostMidPurple: #b48bbd; 
+$ghostWhite: #fff6ff;
+
+// Fire  
+
+$fireBurntRed: #8b2900;
+$fireDarkRed: #de5239;
+$fireRed: #e63900;
+$fireYellow: #ffd508;
+$fireWhite: #fff;
+
+// Water  
+
+$waterDarkBlue: #297383;
+$waterLightBlue: #8bc5cd;
+$waterDarkSand: #e6ac5a;
+$waterLightSand: #ffd56a;
+
+// Grass  
+
+$grassDarkGreen: #416a10;
+$grassLightGreen: #bdff73;
+$grassFlowerRed: #b44131;
+
+//Bug  
+
+$bugLightGreen: #acf641;
+$bugDarkGreen: #185a41;
+$bugNeutralGreen: #207b4a;
+$bugLightBrown: #e6cd94;
+$bugDarkerGreen: #52624a;
+
+// Poison  
+$poisonPurple: #c080be;
+$poisonLightPurple: #d573ee;
+
+
+
+// Fighting 
+$fightingMainRed: #E17374;
+$fightingDarkRed: #613232;
+$fightingBorderRed: #A15253;
+$fightingLightRed: #EE7A7B;
+
+
+// Electric
+$elecMainYellow: #f6bd20;
+$elecLightBrown: #9c5200;
+$elecSubYellow: #de9400; 
+$elecSubBrown: #623108;
+
+// Ground
+
+$groundMainShade: #F0D2A1;
+$groundDarkShade: #70624B;
+$groundDarkMain: #B09A76;
+$groundLightShade: #D6BC90;
+
+// Psychic 
+
+$psyMainShade: #ff5286;
+$psyDarkShade: #401421;
+$psyMainDark: #401421;
+$psyDarkLight: #7F2943;
+
+// Rock 
+
+$rockMainShade: #D5BD83;
+$rockDarkShade: #554C35;
+$rockMainDark: #95845C;
+$rockDarkLight: #BBA673;
+
+// Ice 
+
+$iceMainShade: #b2e6e5;
+$iceDarkShade: #4F6666;
+$iceMainDark: #81A6A6 ;
+$iceDarkLight: #9ECCCC ;
+
+
+// Dragon 
+
+$dragonMainShade: #9f84f3;
+$dragonDarkShade: #221C34;
+$dragonMainDark: #7561B3;
+$dragonDarkLight: #4C3F73;
+
+
+// Dark 
+
+$darkMainShade: #A49088;
+$darkDarkShade: #645853;
+$darkMainDark: #B19B93;
+$darkDarkLight: #8A7A73;
+
+// Steel 
+
+$steelMainShade: #CFD1DE;
+$steelDarkShade: #58595E;
+$steelMainDark: #94959E;
+$steelDarkLight: #B7B9C4;
+
+// Fairy
+
+$fairyMainShade: #fcbac7;
+$fairyDarkShade: #3D2D30 ;
+$fairyMainDark: #BC8B95;
+$fairyDarkLight: #7C5C62;

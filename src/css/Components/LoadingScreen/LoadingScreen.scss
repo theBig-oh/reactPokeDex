@@ -1,0 +1,25 @@
+@import '../../settings.scss';
+
+
+.loading-screen {
+  border: 1px none;
+  border-radius: 10px; 
+  height: 30%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #11adc1;
+  color: white;
+
+  font-size: 2em;
+  font-family: $gameText;
+   transition: all 0.3s ease;
+  -webkit-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+  -moz-box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);
+  box-shadow: 22px 26px 37px -1px rgba(0,0,0,0.63);     
+
+
+  
+}

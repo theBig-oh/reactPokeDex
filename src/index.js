@@ -7,6 +7,7 @@ import Home from './Components/Home';
 import PokeFacts from './Components/PokeFacts';
 
 ReactDOM.render(
+   
   (<BrowserRouter history={browserHistory} basename='/'>
     {/*  <Route component = {App}>
         <Route path='/' component={Home}></Route>
