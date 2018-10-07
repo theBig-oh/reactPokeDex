@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import GetPKMN from './GetPKMN';
 import PokeTypes from './PokeTypes';
 import PokemonPhysical from './PokemonPhysical';
+import PokeDex from './PokeDex';
 
 
 export default class PokeFacts extends Component {
@@ -11,7 +12,7 @@ export default class PokeFacts extends Component {
     this.state = {
       pokemonStats: {},
       pokemonDex: {},
-      currentInfo: 0,
+      currentInfo: 1,
       hasLoaded: 0,
       pokemonColor: null,
     }
@@ -80,6 +81,7 @@ export default class PokeFacts extends Component {
 
                           </div>;
 
+    const pokemonContent = [<PokemonPhysical pkColors={pokemonColor} pokeInfo={pokemonInfo[1]} pokeInf = {pokemonInfo[0]}/>, <PokeDex pDex={pokemonInfo[0]}/> ]
 
     const loadedContent =  <div className='loaded-content'>
                               <div className={`pokemon-container ${pokemonColor} `}> 
@@ -113,7 +115,7 @@ export default class PokeFacts extends Component {
 
                                 <div className='pokemon-content-container baseContainer'>
 
-                                  <PokemonPhysical pkColors={pokemonColor} pokeInfo={pokemonInfo[1]} pokeInf = {pokemonInfo[0]}/>
+                                  {pokemonContent[this.state.currentInfo]}
 
                                 </div>
 
