@@ -1,97 +1,31 @@
 import React, { Component }  from 'react';
 
-function setGenerations(props) {
-
-    // There's no easy way to do this... 
-    // Gotta map out each generation by their games cause the data doesn't include generation type. 
-
-    const rawDex = props;
-    const gamegens = [
-      {'gen':'generation-i',
-        'games':[
-            'red',
-            'blue',
-            'yellow'
-          ]
-        },
-      {'gen':'generation-ii',
-        'games':[
-            'gold',
-            'silver',
-            'crystal'
-          ]
-        },
-      {'gen':'generation-iii',
-        'games':[
-            'ruby',
-            'sapphire',
-            'emerald',
-            'firered',
-            'leafgreen'
-          ]
-        },
-      {'gen':'generation-iv',
-        'games':[
-            'diamond',
-            'pearl',
-            'platinum',
-            'heartgold',
-            'soulsilver'
-
-          ]
-        },
-      {'gen':'generation-v',
-        'games':[
-            'black',
-            'white',
-            'black-2',
-            'white-2'
-          ]
-        },
-      {'gen':'generation-vi',
-        'games':[
-            'x',
-            'y',
-            'alpha-sapphire',
-            'omega-ruby'
-          ]
-        },
-  ];
-  
-  const findGenGames = () => {
-    const results = []; 
-
-    rawDex.map((dexData,i) => {
-      gamegens.map((gens,x) => {
-        gens.games.map((game,z) => {
-          if(game == dexData.version.name) {
-            
-
-            results[gens.gen] = gens.gen;
-          }
-        })
-      })
-    });
-    return results
-  };
-
-  let gens = new findGenGames();
-
-  console.log(gens);
-  return gens
-
-}
-
-
 
 export default class PokeDex extends Component {
   constructor(props) {
     super(props);
     console.log(props);
+
+    this.state = {
+      currentDex: 0,
+    }
+    this.changeGen = this.changeGen.bind(this);
+  }
+
+  changeGen(event) {
+    this.setState({
+      currentDex: event,
+    })
   }
   render() {
+
+    // Need to refactor this 
+    // to make it more modular 
+    // by design
+
     const gamegens = [
       {'gen':'generation-i',
+        'displayGen': 'I',
         'games':[
             'red',
             'blue',
@@ -100,6 +34,7 @@ export default class PokeDex extends Component {
           'collectedGames': [],
         },
       {'gen':'generation-ii',
+        'displayGen': 'II',
         'games':[
             'gold',
             'silver',
@@ -108,6 +43,7 @@ export default class PokeDex extends Component {
           'collectedGames': [],
         },
       {'gen':'generation-iii',
+        'displayGen': 'III',
         'games':[
             'ruby',
             'sapphire',
@@ -118,6 +54,7 @@ export default class PokeDex extends Component {
           'collectedGames': [],
         },
       {'gen':'generation-iv',
+        'displayGen': 'IV',
         'games':[
             'diamond',
             'pearl',
@@ -129,6 +66,7 @@ export default class PokeDex extends Component {
           'collectedGames': [],
         },
       {'gen':'generation-v',
+        'displayGen': 'V',
         'games':[
             'black',
             'white',
@@ -138,6 +76,7 @@ export default class PokeDex extends Component {
           'collectedGames': [],
         },
       {'gen':'generation-vi',
+        'displayGen': 'VI',
         'games':[
             'x',
             'y',
@@ -149,31 +88,18 @@ export default class PokeDex extends Component {
 
   ];    
 
+
+
   const findGenGames = () => {
     let results = [];
-/*    this.props.pDex.map((dexEntry, i) => {
-      let dexGenName = dexEntry.version.name;
-      let isThere = false;
-
-      console.log(dexGenName);
-      gamegens.map((gens,z) => {
-        gens.games.map((game,x)=> {
-          if(game == dexGenName) {
-            
-          }
-        })
-      })
-    })*/
-
-
     gamegens.map((generation,i) => {
-      let isThere = false;
-      let isEntry = false;
-      let finalObject = {
+      let isThere = false;            // Filters the unsorted pokemon dex entries into
+      let finalObject = {             // objects sorted by generations. 
         genname: generation.gen,
         dexData: [],
+        displaygen: generation.displayGen,
       }
-      generation.games.map((game,x) => {
+      generation.games.map((game,x) => {       
         this.props.pDex.map((dexEntry, a) => {
           if(dexEntry.version.name == game) {
             isThere = true
@@ -183,7 +109,6 @@ export default class PokeDex extends Component {
         })
       })
       if(isThere) {
-        finalObject.genname = generation.gen,
         results.push(finalObject);
       }
       
@@ -195,15 +120,31 @@ export default class PokeDex extends Component {
   }
 
 
-  let renderedGens = this.props.pDex ? findGenGames() : [];
+  let genObjects = this.props.pDex ? findGenGames() : [];
 
-  console.log(renderedGens);
+  console.log(genObjects);
+
+  let shownGens = genObjects.map((gen,i) => {
+    let activeClass = 'not-active';
+    if(i == this.state.currentDex) {
+      activeClass = 'active-gen';
+    }
+    return (
+      <div className={`${gen.genname}  ${activeClass} generations innerContainer`} key={i} onClick={(event) => {this.changeGen(i)}} > {gen.displaygen} </div>
+    )
+  })
+
 
     return (
         <div className='pokemon-dex'> 
-          {
-            
-          }
+          <div className='gen-selection-container'> 
+            <div className ='gen-title innerContainer'> 
+              PokeDex Entries appear in Generation... 
+            </div>
+            <div className='gen-display'> 
+              { shownGens }
+            </div>          
+          </div> 
         </div>
       )
   }
