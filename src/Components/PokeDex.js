@@ -21,6 +21,7 @@ export default class PokeDex extends Component {
   changeGen(event) {
     this.setState({
       currentDex: event,
+      currentLang: 'en'
     })
   }
   render() {
@@ -167,46 +168,52 @@ export default class PokeDex extends Component {
   })
 
   let shownLangs = genObjects[this.state.currentDex].genLangs.map((lang,i) => {
-/*    langs.map((lan,x) => {
-      console.log(lan.code);
-      console.log(lang);
-      if(lan.code == lang.toString()) {
-        return (
-          <div className={` language innerContainer`} key={i} onClick={(event) => {this.changeLang(lang)}}> {lan.lang} </div> 
-        )
-      } else {
-        console.log('not found');
-      }
-    })*/
-
-    for(let x=0;x<langs.length;x++) {
+    for(let x=0;x<langs.length;x++) { // Weird... langs.map wasn't working so had to do a for loop. Need to look into this. 
       if(langs[x].code == lang.toString()) {
-
+        let activeClass = 'not-active';
+        if(lang.toString() == this.state.currentLang) {
+          activeClass = 'active-lang';
+        }
         return (
-          <div className={` language innerContainer`} key={i} onClick={(event) => {this.changeLang(lang)}}> {langs[x].lang} </div> 
+          <div className={`${activeClass} language innerContainer`} key={i} onClick={(event) => {this.changeLang(lang)}}> {langs[x].lang} </div> 
         )
       }
+    }
+  });
+
+  let shownDex = genObjects[this.state.currentDex].dexData.map((dex,i) => {
+    if(dex.language.name == this.state.currentLang) {
+      return (
+        <div key={i} className='dex-entry innerContainer'> 
+          <div className='dex-content'> {dex.flavor_text} </div>
+
+          <div className='dex-game'> <span className='pokeTitle'>Pokemon</span> <span className='poke-version'>{dex.version.name}</span> </div>
+        </div>
+      )
     }
   })
     return (
         <div className='pokemon-dex'> 
-          <div className='gen-selection-container'> 
+          <div className='gen-selection-container dex-containers'> 
             <div className ='gen-title innerContainer'> 
               PokeDex Entries appear in Generation... 
             </div>
-            <div className='gen-display'> 
+            <div className='gen-display dynamic-display'> 
               { shownGens }
             </div>          
           </div> 
-          <div className='gen-lang-container'>
+          <div className='gen-lang-container dex-containers'>
             <div className='gen-title innerContainer'>
               Available in these languages.
             </div>
-            <div className='lang-display'>
+            <div className='lang-display dynamic-display'>
               {shownLangs}
             </div>
           </div>
+          <div className='entry-container'> 
+            {shownDex}
 
+          </div>
         </div>
       )
   }
