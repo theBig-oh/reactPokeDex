@@ -1,0 +1,165 @@
+@import '../../settings.scss';
+
+
+.pokemon-dex {
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  font-family: $gameText;
+  .dex-containers {
+    display: flex;
+    width: 100%; 
+    height: 20%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2%;
+    * { transition: all 0.3s ease; }
+    .gen-title {
+      width: 60%;
+      height: 70%;
+      font-size: 1.3em;
+      display: flex;
+      align-items: center;
+      padding-left: 2%;
+      word-spacing: 6px;
+    }
+
+    .lang-display {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+      .language {
+        width: 21%;
+        margin: 1% 0%;
+        height: 4vh; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+
+        &:hover {
+          opacity: 0.85;
+          cursor: pointer;
+        }
+
+        &.active-lang {
+          background: #eee !important;
+          color: black;
+        }
+      }
+    }
+    .gen-display {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      height: 50%;
+
+      .generations {
+        width: 16.86%;
+        justify-content:  center;
+        align-items: center;
+        display: flex;
+        margin: 0% 3%;
+
+
+        &:hover {
+          cursor: pointer;
+          opacity: 0.85;
+        }
+
+        &.active-gen {
+          background: #eee !important;
+          color: black;
+        }
+      }
+    }
+
+
+  }
+  .entry-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 58%;
+    padding: 0 2%;
+    justify-content: space-between;
+    align-items: center;
+    .dex-entry {
+      width: 48%;
+      height: 28%;
+
+      .dex-content {
+        padding: 0 1%;
+        font-size: 1em;
+        width: 100%;
+        height: 50%;
+        word-spacing: 3px;
+      }
+      .dex-game {
+        position: relative;
+        background: white;
+        color: black;
+        width: 35%;
+        display: flex;
+        justify-content: center;
+        border-radius: 10px;
+        left: 64%;
+        top: 40%;
+
+        .pokeTitle {
+          margin-right: 5px;
+        }
+       
+      }
+    }
+  }
+}
+
+
+@media (max-width: 990px) {
+  .pokemon-dex {
+    .dex-containers {
+      flex-direction: column;
+
+      .gen-title {
+        width: 99%;
+        height: 41%;
+      }
+      .gen-display {
+        height: 32%;
+        margin-top: 6%;
+      }
+      .lang-display {
+        margin-top: 2%;
+        height: 19vh !important;
+        .language {
+          width: 40%;
+        }
+      }
+    }
+    .gen-lang-container {
+      height: auto !important;
+    }
+    .entry-container {
+      height: 47%;
+      overflow-y: scroll;
+      .dex-entry {
+        width: 100%;
+        margin-bottom: 8%;
+
+        &:first-of-type {
+          margin-top: 2%;
+        }
+      }
+    }
+  }
+}

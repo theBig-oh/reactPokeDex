@@ -14,8 +14,8 @@ export default class PokeTypes extends Component {
     if(clor != undefined) {
       console.log('this is in setParentColor, and is not undefined');
       this.props.pkColor(clor);
+      console.log(clor);
     }
-    console.log(clor);
   }
   componentDidMount() {
     const mainType = () => {

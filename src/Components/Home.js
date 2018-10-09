@@ -114,8 +114,6 @@ class Home extends Component {
 
 
   handlePokeClick(prop){
-    console.log(event);
-    console.log(prop);
 
     this.setState({
       currentPage: prop,
