@@ -12,7 +12,7 @@ export default class PokeFacts extends Component {
     this.state = {
       pokemonStats: [],
       pokemonDex: [],
-      currentInfo: 1,
+      currentInfo: 0,
       hasLoaded: 0,
       pokemonColor: null,
     }
@@ -51,7 +51,11 @@ export default class PokeFacts extends Component {
 
 
   }
-
+  changeInfo(i) {
+    this.setState({
+      currentInfo: i,
+    })
+  }
 
   setPokemonColors(pkmnColor) {
     const colorType = 'pkmn_'+pkmnColor;
@@ -60,10 +64,6 @@ export default class PokeFacts extends Component {
     });
   }
 
-  componentWillMount() {
- 
-
-  }
   componentDidMount() {
     this.setPokemonFacts();
 
@@ -97,7 +97,7 @@ export default class PokeFacts extends Component {
     const pokemonColor = this.state.pokemonColor;
     const pokemonInfo = [this.state.pokemonDex, this.state.pokemonStats];
    
-
+    const dexLinks = ['Phys.','Dex Entries'];
     const pokemonContent = [<PokemonPhysical pkColors={pokemonColor} pokeInfo={pokemonInfo[1]} pokeInf = {pokemonInfo[0]}/>, 
                             <PokeDex pDex={pokemonInfo[0].flavor_text_entries} />,
                           ];
@@ -127,7 +127,17 @@ export default class PokeFacts extends Component {
                                   </div>
 
                                   <div className='pokemon-content-nav'>
-
+                                    {
+                                      dexLinks.map((dex,i) => {
+                                        let active = 'not-active';
+                                        if(i == this.state.currentInfo) {
+                                          active = 'active-link';
+                                        }
+                                        return (
+                                          <div className={`${active} pokemon-nav-link`} onClick={(event) => {this.changeInfo(i)}}> {dex} </div>
+                                        )
+                                      })
+                                    }
 
                                   </div>
                                 </div>
